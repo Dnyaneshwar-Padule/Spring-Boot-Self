@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+
+	<!-- Dao -->
+	<bean id="studentDao" class="com.tca.dao.StudentDaoImpl"/>
+
+	<!-- Service -->
+	<bean id="studentServiceTarget" class="com.tca.service.StudentServiceImpl">
+		<property name="studentDao" ref="studentDao"/> <!-- Dependency Injection-->
+	</bean>
+
+	<!-- Logger-->
+	<bean id="logger" class="com.tca.util.LoggerAdvice"/>
+
+	<!-- Proxy (proxy of Student Service, which wraps logger)-->
+	<bean id="studentService" class="org.springframework.aop.framework.ProxyFactoryBean">
+	
+		<!-- Specifying the original object-->
+		<property name="target" ref="studentServiceTarget"/>
+		
+		<!--Proxy Interfaces -->
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.tca.service.StudentService</value>
+			</list>
+		</property>
+		
+		<property name="interceptorNames">
+			<list>
+				<value>logger</value>
+			</list>
+		</property>
+		
+	</bean>
+
+
+</beans>
