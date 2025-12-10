@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<!-- All beans are declares in beans
+beans is the root element of any Spring configuration file-->
+<beans>
+
+	<!-- 
+		 The <bean> element is used to tell the 
+		Spring container about a class and how it should be configured. 
+		
+		Declaring a bean
+		There can be so many beans, so to identify them uniquely, we have to provide them a id
+		we also have to specify the bean class
+	-->
+	<bean id="greetingService"
+		class="com.tca.service.GreetingServiceImpl">
+		
+		<!-- The property tag, can be used for fields in the bean, 
+			the value tag, initialzes the bean with specified value
+			The property tag, sets the property value through the setter method
+		<property name="message">
+			<value>Hello Spring !</value>
+		</property>
+		-->
+		
+		<!-- Just like property, we can tell to Spring, to set/initialize a our bean
+			with parameterized constructor, with constructo-arg tag-->
+		<constructor-arg>
+			<value>Hello Spring!</value>
+		</constructor-arg>
+		
+		
+	</bean>
+</beans>
