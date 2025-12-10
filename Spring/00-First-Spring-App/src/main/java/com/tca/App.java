@@ -26,6 +26,7 @@ public class App {
     	  In Spring 6.x the XmlBeanFactory is completely removed, we can use 
     	  ApplicationContext to get Beans 
     	 */
+  
     	
     	try {    		
     		// I say it, class path - resource folder, xml - xml config file, application context
@@ -37,6 +38,5 @@ public class App {
     	catch(Exception e) {
     		e.printStackTrace();
     	}
-    	
     }
 }

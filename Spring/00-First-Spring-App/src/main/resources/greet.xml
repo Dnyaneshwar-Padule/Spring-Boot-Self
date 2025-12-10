@@ -21,16 +21,24 @@ beans is the root element of any Spring configuration file-->
 		<!-- The property tag, can be used for fields in the bean, 
 			the value tag, initialzes the bean with specified value
 			The property tag, sets the property value through the setter method
-		<property name="message">
-			<value>Hello Spring !</value>
-		</property>
 		-->
+		
+		<property name="message">
+			<value>Hello Spring !!!!</value>
+		</property>
+		
 		
 		<!-- Just like property, we can tell to Spring, to set/initialize a our bean
 			with parameterized constructor, with constructo-arg tag-->
 		<constructor-arg>
 			<value>Hello Spring!</value>
 		</constructor-arg>
+		
+		<!-- 
+			If we write both, I mean property and constructor-arg tag
+			Then,  obviously, first the constructor will be called, that means construcctor-arg will initialize it's value
+			and then the setter will set the value
+		-->
 		
 		
 	</bean>

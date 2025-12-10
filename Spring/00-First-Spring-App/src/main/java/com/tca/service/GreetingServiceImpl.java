@@ -7,6 +7,7 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	public GreetingServiceImpl(String message) {
 		this.message = message;
+		System.out.println("GreetingServiceImpl.GreetingServiceImpl()");
 	}
 	
 	@Override
@@ -16,5 +17,6 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	public void setMessage(String message) {
 		this.message = message;
+		System.out.println("GreetingServiceImpl.setMessage()");
 	}
 }
