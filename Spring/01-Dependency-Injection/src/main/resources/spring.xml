@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+
+	<bean id="student" class="com.tca.entities.Student">
+		<property name="address" ref="address"></property>
+		<property name="name">
+			<value>Unkonwn</value>
+		</property>	
+	</bean>
+	
+	<bean id="address" class="com.tca.entities.Address">
+		<property name="city">
+			<value>Mars</value>
+		</property>
+	</bean>
+
+</beans>
