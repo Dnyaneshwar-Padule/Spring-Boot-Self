@@ -13,7 +13,7 @@
 	
 	<bean id="address" class="com.tca.entities.Address">
 		<property name="city">
-			<value>Mars</value>
+			<value>Who cares !</value>
 		</property>
 	</bean>
 
